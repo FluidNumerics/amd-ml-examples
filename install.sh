@@ -3,6 +3,7 @@
 #          Garrett Byrd             (garrett@fluidnumerics.com)
 #          Dr. Joseph Schoonover    (joe@fluidnumerics.com)
 
+
 # install ROCm
 # https://rocm.docs.amd.com/projects/install-on-linux/en/latest/tutorial/quick-start.html
 sudo apt install "linux-headers-$(uname -r)" "linux-modules-extra-$(uname -r)"
@@ -24,8 +25,8 @@ rm -rf ~/miniconda3/miniconda.sh
 
 
 # set up conda environment                                                                                
-conda create -n llama-2-env
-conda activate llama-2-env
+conda create -n llama-3-env
+conda activate llama-3-env
 conda install pip
 pip install jupyterlab
 
@@ -37,3 +38,12 @@ pip install torch torchvision torchaudio --index-url https://download.pytorch.or
 
 # install transformers
 pip install transformers accelerate
+
+
+# install git-lfs
+# https://git-lfs.com/
+wget https://github.com/git-lfs/git-lfs/releases/download/v3.5.1/git-lfs-linux-amd64-v3.5.1.tar.gz
+tar -xzf git-lfs-linux-amd64-v3.5.1.tar.gz 
+cd git-lfs-3.5.1/
+sudo ./install.sh
+git lfs install
