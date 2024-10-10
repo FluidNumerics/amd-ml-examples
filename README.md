@@ -22,7 +22,15 @@ Slides can be found [here](https://docs.google.com/presentation/d/1JhdUjeY8HXoKh
 
 
 ## Fine-Tuning Llama 3 on AMD Radeon GPUs
+**Topics Covered:**
+
+- When is fine-tuning necessary?
+- Dataset selection for fine-tuning
+- The role of quantization in training and inference
+- Techniques and tools such as LoRA, QLoRA, PEFT, and FSDP
+- Running a fine-tuned model on AMD Radeon GPUs
+
 Accompanying material can be found under `fine-tuning-llama-3`.
 
-Slides can be found [here]().
+Slides can be found [here](https://docs.google.com/presentation/d/18nclUUsTG7MCc-hjTuWp7HlqRc129YpNjtzwjIp2Zag/edit?usp=sharing). Presented 15 October 2024.
 
