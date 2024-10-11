@@ -2,6 +2,10 @@ fine-tuning-llama-3/MetaMathQA
 fine-tuning-llama-3/Meta-Llama-3-8B
 fine-tuning-llama-3/Llama-Math-Single-GPU
 fine-tuning-llama-3/Llama-Math-Multi-GPU
+MetaMathQA
+Meta-Llama-3-8B
+Llama-Math-Single-GPU*
+Llama-Math-Multi-GPU*
 fine-tuning-llama-3/*.tif
 fine-tuning-llama-3/*.png
 fine-tuning-llama-3/*.gif
