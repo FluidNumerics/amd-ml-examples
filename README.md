@@ -4,7 +4,7 @@ This repository contains the accompanying materials for talks given as part of t
 ### Disclaimer:
 The contents of these repositories are considered up-to-date for the date the talk is given. No materials should be expected to be maintained, updated versions, etc. past these dates. Many notebooks/scripts/etc will likely still work for recent versions of software with a simple version change in the appropriate file, but this is not guranteed. 
 
-E.g., `getting-started-with-llama-3/install.sh` will never be update to install ROCm 6.2 or beyond, since ROCm 6.1 was the latest version at the day of presentation.
+E.g., `getting-started-with-llama-3/install.sh` will never be updated to install ROCm 6.2 or beyond, since ROCm 6.1 was the latest version at the day of presentation.
 
 # Webinars
 
