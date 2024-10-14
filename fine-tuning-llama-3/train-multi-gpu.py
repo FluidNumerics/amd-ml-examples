@@ -7,6 +7,10 @@
 
 # https://huggingface.co/docs/bitsandbytes/main/en/fsdp_qlora
 
+# Launch with:
+# torchrun --nproc_per_node=2 fine-tuning-llama-3/train-multi-gpu.py
+# Adjust --nproc_per_node=2 if using more than 2 GPUs
+
 import torch
 from numpy import argmax
 from transformers import (
@@ -19,9 +23,10 @@ from transformers import (
 from datasets import load_dataset
 from peft import LoraConfig, get_peft_model
 import evaluate
-from trl import SFTTrainer, SFTConfig
+from trl import SFTTrainer
 from accelerate import PartialState
 import sys
+import os
 
 print(f"Device name: {torch.cuda.get_device_name(0)}")
 if torch.cuda.is_available():
@@ -32,7 +37,7 @@ else:
 
 print(f"Device: {device}")
 
-path_to_model = ""  # Set path to your local model, or a model from Hugging Face
+path_to_model = f"{os.getcwd()}/fine-tuning-llama-3/Meta-Llama-3-8B"
 
 my_tokenizer = AutoTokenizer.from_pretrained(path_to_model)
 my_tokenizer.pad_token = my_tokenizer.eos_token
@@ -74,7 +79,9 @@ adapted_model = get_peft_model(quantized_model, lora_config)
 
 # Load dataset
 MetaMathQA = load_dataset(
-    "json", data_files="MetaMathQA/MetaMathQA-395K.json", split="train[:100]"
+    "json",
+    data_files="fine-tuning-llama-3/MetaMathQA/MetaMathQA-395K.json",
+    split="train[:10000]",
 )
 
 # Split dataset into "test" and "train" columns
